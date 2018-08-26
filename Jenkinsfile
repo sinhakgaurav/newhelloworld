@@ -45,7 +45,7 @@ pipeline {
 					
 					
 					
-					server: server, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
+					rtMaven.deployer server: server, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
 					def buildInfo1 = rtMaven.run pom: 'pom.xml', goals: 'clean install'
 					
 					//Publishing build info to Artifactory - Method 2
