@@ -5,7 +5,7 @@
   <artifactId>HelloWorldWebApp</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>HelloWorldWebApp Maven Webapp</name>
+  <name>HelloWorldWebAppNew Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -16,7 +16,7 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>HelloWorldWebApp</finalName>
+    <finalName>HelloWorldlocal</finalName>
 	<pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       	<plugins>
 	        <plugin>
