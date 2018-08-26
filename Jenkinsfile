@@ -12,7 +12,7 @@ pipeline {
             steps{
                 withMaven(maven :'default'){
                     echo 'compiling application step'
-                    sh 'mvn clean compile'
+                    sh 'mvn clean compile -X'
                 }
             }
 
