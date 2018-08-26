@@ -10,16 +10,16 @@ pipeline {
         
         stage('Maven is Compiling Application') {
             steps{
-                withMaven(maven :'default'){
+                withMaven(maven :'maven'){
                     echo 'compiling application step'
-                    sh 'mvn clean compile -X'
+                    sh 'mvn clean compile'
                 }
             }
 
         } 
         stage('Junit is Performing Test') {
             steps {
-                withMaven(maven :'default'){
+                withMaven(maven :'maven'){
                     echo 'scripts to run tests...'
                     sh 'mvn test'
                 }    
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Sonar is Analysing Code') {
             steps {
-                withMaven(maven :'default'){
+                withMaven(maven :'maven'){
                     echo 'Running code check....'
                     sh 'mvn sonar:sonar'
                 }
@@ -40,7 +40,7 @@ pipeline {
 					def server = Artifactory.server 'default' 
 					
 					def rtMaven = Artifactory.newMavenBuild()
-					rtMaven.tool = 'default'
+					rtMaven.tool = 'maven'
 					rtMaven.opts = '-Xms1024m -Xmx4096m'
 					
 					
