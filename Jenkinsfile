@@ -12,7 +12,7 @@ pipeline {
             steps{
                 withMaven(maven :'maven'){
                     echo 'compiling application step'
-                    sh 'mvn clean compile'
+                    bat 'mvn clean compile'
                 }
             }
 
@@ -21,7 +21,7 @@ pipeline {
             steps {
                 withMaven(maven :'maven'){
                     echo 'scripts to run tests...'
-                    sh 'mvn test'
+                    bat 'mvn test'
                 }    
             }
         }
@@ -29,7 +29,7 @@ pipeline {
             steps {
                 withMaven(maven :'maven'){
                     echo 'Running code check....'
-                    sh 'mvn sonar:sonar'
+                    bat 'mvn sonar:sonar'
                 }
             }
         }
@@ -45,7 +45,7 @@ pipeline {
 					
 					
 					
-					rtMaven.deployer server: server, releaseRepo: 'kumarsinha_devops', snapshotRepo: 'kumarsinha_devops'
+					server: server, releaseRepo: 'libs-release-local', snapshotRepo: 'libs-snapshot-local'
 					def buildInfo1 = rtMaven.run pom: 'pom.xml', goals: 'clean install'
 					
 					//Publishing build info to Artifactory - Method 2
@@ -68,7 +68,7 @@ pipeline {
         }
 		stage('Building Docker Image') {
 			steps {
-			    sh 'docker build -t dockerim .'
+			    bat 'docker build -t dockerim .'
 				}
 		}
 		
