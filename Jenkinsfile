@@ -92,7 +92,7 @@ pipeline {
 		}
 		stage('Creating Prometheus instance') {
 			steps {
-			    bat 'docker-compose up'
+			    bat 'docker-compose up -d'
 				
 				}
 		}
