@@ -75,10 +75,11 @@ pipeline {
 		stage('Deploy to Dockerhub') {
 			steps {
 				script {
-					withDockerRegistry([credentialsId: registryCredential, url: '']) {
-						sh 'docker tag dockerim registry:dockerim'  
-						sh 'docker push registry:dockerim'
+					docker.withRegistry(<registry>) {
+						  app.push("${env.BUILD_NUMBER}")
+						  app.push("latest")
 					}
+
 				}
 			}
 		}
