@@ -13,18 +13,19 @@ ENV BITNAMI_APP_NAME="tomcat" \
     PATH="/opt/bitnami/java/bin:/opt/bitnami/tomcat/bin:$PATH" \
     TOMCAT_AJP_PORT_NUMBER="8009" \
     TOMCAT_ALLOW_REMOTE_MANAGEMENT="0" \
-    TOMCAT_HTTP_PORT_NUMBER="8080" \
-    TOMCAT_PASSWORD="" \
+    TOMCAT_HTTP_PORT_NUMBER="8089" \
+    TOMCAT_PASSWORD="jairamjiki" \
     TOMCAT_SHUTDOWN_PORT_NUMBER="8005" \
-    TOMCAT_USERNAME="user"
+    TOMCAT_USERNAME="sinhakgaurav"
 
-EXPOSE 8080
-
-ENTRYPOINT ["/app-entrypoint.sh"]
-CMD ["nami","start","--foreground","tomcat"]
 MAINTAINER gaurav sinha <sinha.kgaurav@gmail.com
 # Add Maven dependencies (not shaded into the artifact; Docker-cached)
 ADD target/*.war           /target/DevopsTask_image
 # Add the service itself
 ARG WAR_FILE
 ADD target/*.war /
+	
+EXPOSE 8080
+
+ENTRYPOINT ["/app-entrypoint.sh"]
+CMD ["nami","start","--foreground","tomcat"]
