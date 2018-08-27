@@ -76,8 +76,8 @@ pipeline {
 			steps {
 				script {
 					withDockerRegistry([credentialsId: 'dockerhub', url: '']) {
-						sh 'docker tag dockerim sinhakgaurav/devops_task:dockerim'  
-						sh 'docker push sinhakgaurav/devops_task:dockerim'
+						bat 'docker tag dockerim sinhakgaurav/devops_task:dockerim'  
+						bat 'docker push sinhakgaurav/devops_task:dockerim'
 					}
 				}
 			}
