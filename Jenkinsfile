@@ -86,7 +86,7 @@ pipeline {
 		}
 		stage('Start the web app') {
 			steps {
-			    bat 'docker run -d -p 6778:8080 sinhakgaurav/devops:dockerim'
+			    bat 'docker run -d -p 6778:8080 dockerim'
 				
 				}
 		}
