@@ -1,5 +1,5 @@
 FROM tomcat:8.0
-MAINTAINER gaurav sinha <sinha.kgaurav@gmail.com
+MAINTAINER gaurav sinha <kumar.sinha@nagarro.com>
 # Add Maven dependencies (not shaded into the artifact; Docker-cached)
 EXPOSE 8080
 
