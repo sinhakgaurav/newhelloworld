@@ -78,11 +78,12 @@ pipeline {
 					withDockerRegistry([credentialsId: 'dockerhub', url: '']) {
 						sh 'docker tag dockerim sinhakgaurav/devops:dockerim'  
 						sh 'docker push sinhakgaurav/devops:dockerim'
+					}
 				}
 			}
+			
+			
 		}
-		
-		
 	}
 }
 
