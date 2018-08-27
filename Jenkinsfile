@@ -69,6 +69,7 @@ pipeline {
 		stage('Building Docker Image') {
 			steps {
 			    bat 'docker build -t dockerim .'
+				bat 'docker push dockerim'
 				}
 		}
 		
