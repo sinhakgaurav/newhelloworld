@@ -69,9 +69,20 @@ pipeline {
 		stage('Building Docker Image') {
 			steps {
 			    bat 'docker build -t dockerim .'
-				bat 'docker push dockerim'
+				
 				}
 		}
+		stage('Deploy to Dockerhub') {
+			steps {
+				script {
+					withDockerRegistry([credentialsId: registryCredential, url: '']) {
+						sh 'docker tag dockerim registry:dockerim'  
+						sh 'docker push registry:dockerim'
+					}
+				}
+			}
+		}
+		
 		
 	}
 }
