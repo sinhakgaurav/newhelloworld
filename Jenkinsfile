@@ -86,7 +86,6 @@ pipeline {
 		}
 		stage('Start the web app') {
 			steps {
-				bat 'fuser -k 9042/tcp'
 			    bat 'docker run -d -p 6778:8080 dockerim'
 				
 				}
