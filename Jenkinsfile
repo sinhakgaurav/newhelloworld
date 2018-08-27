@@ -76,7 +76,7 @@ pipeline {
 			steps {
 				script {
 					docker.withRegistry(https://hub.docker.com/r/sinhakgaurav/devops_task/) {
-                                                                                      app.push("${env.BUILD_NUMBER}")
+                                                                                      app.push(${env.BUILD_NUMBER})
                                                                                       app.push("latest")
                                                                         }
 
