@@ -86,7 +86,7 @@ pipeline {
 		}
 		stage('Start the web app') {
 			steps {
-				bat 'docker kill $(docker ps -q)'
+				bat 'docker kill $(docker ps)'
 			    bat 'docker run -d -p 6778:8080 dockerim'
 				
 				}
