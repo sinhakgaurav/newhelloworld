@@ -17,14 +17,14 @@ services:
         image: grafana/grafana:3.0.0-beta7
         environment:
             - GF_SECURITY_ADMIN_PASSWORD=pass
-        depends_on:
-            - prometheus
-        ports:
-            - "3000:3000"
-        environment:
             - DS_NAME=Prometheus
             - DS_TYPE=prometheus
             - DS_ACCESS=direct
             - DS_URL=http://localhost:6777
+        depends_on:
+            - prometheus
+        ports:
+            - "3000:3000"
+            
 
 
