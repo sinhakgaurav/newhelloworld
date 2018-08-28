@@ -21,5 +21,10 @@ services:
             - prometheus
         ports:
             - "3000:3000"
+        environment:
+            - DS_NAME=Prometheus
+            - DS_TYPE=prometheus
+            - DS_ACCESS=direct
+            - DS_URL=http://localhost:6777
 
 
