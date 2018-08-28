@@ -90,7 +90,7 @@ pipeline {
 				
 				}
 		}
-		stage('Creating Prometheus instance') {
+		stage('Configuring Dashboards and Starting app') {
 			steps {
 			    bat 'docker-compose up -d'
 				
