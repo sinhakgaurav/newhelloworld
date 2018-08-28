@@ -1,5 +1,4 @@
 # docker-compose.yml
-
 version: '2'
 services:
     prometheus:
@@ -14,7 +13,6 @@ services:
         image: prom/node-exporter
         ports:
             - '9100:9100'
-
     grafana:
         image: grafana/grafana:3.0.0-beta7
         environment:
