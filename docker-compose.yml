@@ -1,5 +1,5 @@
 # docker-compose.yml
-version: '2'
+version: '3'
 services:
     prometheus:
         image: prom/prometheus
@@ -14,16 +14,12 @@ services:
         ports:
             - '9100:9100'
     grafana:
-        image: grafana/grafana:3.0.0-beta7
+        image: grafana/grafana
         depends_on:
             - prometheus
         ports:
             - "3000:3000"
         environment:
             - GF_SECURITY_ADMIN_PASSWORD=pass
-            - DS_NAME=Prometheus
-            - DS_TYPE=prometheus
-            - DS_ACCESS=direct
-            - DS_URL=http://localhost:6777
 
 
